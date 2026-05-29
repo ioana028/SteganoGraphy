@@ -632,7 +632,7 @@ Metoda `ExtractMessageInBitmap` face următoarele:
 
 ---
 
-## 21. Explicație scurtă pentru prezentare orală
+## 21. Explicație scurtă 
 
 Implementarea folosește steganografie în domeniul frecvență. Imaginea BMP este împărțită în blocuri de `8x8`, fiecare bloc este convertit din RGB în YCbCr, apoi se aplică DCT pe componentele `Cb` și `Cr`. Mesajul nu este ascuns în luma `Y`, ci doar în crominanță, pentru a reduce impactul vizual. Pentru fiecare bloc se aleg doi coeficienți DCT de frecvență medie, unul din `Cb` și unul din `Cr`. Coeficientul este cuantizat, iar bitul mesajului este introdus prin LSB în coeficientul cuantizat. După modificare, se aplică IDCT și imaginea este reconstruită în RGB. La extragere se repetă conversia și DCT, se citește LSB-ul acelorași coeficienți și se reconstruiește mesajul folosind aceeași cheie XOR.
 
